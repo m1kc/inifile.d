@@ -85,15 +85,18 @@ public class IniFile
 	{
 		foreach (string s; splitLines(input))
 		{
-			if (s[0]==';') continue; // a comment
+			// comment
+			if (s[0]==';') continue;
 
+			// header
 			if (s[0]=='[' && s[$-1]==']')
 			{
 				setGroup(s[1..$-1]);
 				continue;
 			}
 
-			if (s.indexOf('=')==-1) continue; // blank line
+			// blank line
+			if (s.indexOf('=')==-1) continue;
 
 			// key-value pair
 			auto tmp = s.split("=");
