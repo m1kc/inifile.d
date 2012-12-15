@@ -3,14 +3,21 @@ inifile.d
 
 INI parsing, editing and generating library.
 
+Requirements
+------------
+* dmd (version 2)
+
 Building
 --------
+None needed. inifile.d is distributed in source code, so it's ready to use right after download.
 
+Building test and HTML docs
+---------------------------
 Requirements:
 * dmd (version 2)
 * make
 
-inifile.d is built using make. Available targets are:
+Everyt built using make. Available targets are:
 * `all` (default) &mdash; build everything including documentation.
 * `nodocs` &mdash; build everything except documentation.
 * `clean` &mdash; cleanup the working dir.
