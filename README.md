@@ -20,7 +20,7 @@ Requirements:
 Everything is built using make. Available targets are:
 * `all` (default) &mdash; build everything including documentation.
 * `nodocs` &mdash; build everything except documentation.
-* `clean` &mdash; cleanup the working dir.
+* `clean` &mdash; clean up the working dir.
 
 Simple typing `make` in project dir is enough if you don't need something specific.
 
