@@ -17,7 +17,7 @@ Requirements:
 * dmd (version 2)
 * make
 
-Everyt built using make. Available targets are:
+Everything is built using make. Available targets are:
 * `all` (default) &mdash; build everything including documentation.
 * `nodocs` &mdash; build everything except documentation.
 * `clean` &mdash; cleanup the working dir.
