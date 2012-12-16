@@ -22,7 +22,7 @@
 
 /**
  * Authors: m1kc [m1kc@yandex.ru]
- * Date: December 16, 2012
+ * Date: December 17, 2012
  * License: GNU/GPL v2 or higher
  * 
  * Standards:
