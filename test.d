@@ -64,6 +64,8 @@ foo=bar";
 		scope IniFile f = new IniFile();
 		f.parse(ini);
 		assert(f.get("foobar", "foo")=="bar");
+		f.setGroup("foobar");
+		assert(f.get("foo")=="bar");
 	}
 	
 	{
