@@ -47,7 +47,7 @@ public class IniFile
 
 	/// Set a group we are working with. If it doesn't exist, it will
 	/// be created when you'll add an item to it. If not set,
-	/// "Default group" title is used.
+	/// "global" is used.
 	public void setGroup(string w)
 	{
 		last = w;
