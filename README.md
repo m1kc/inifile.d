@@ -63,6 +63,20 @@ Output will be:
 
 You see? Using inifile.d is very similar to composing an actual INI file, so writing code would be simple and fast.
 
+Parsing an INI is easy, too:
+
+```d
+IniFile f = new IniFile();
+f.parse(someString);
+// way one
+f.setGroup("some section");
+string someVar = f.get("key1");
+string someVar = f.get("key2");
+// way two
+string someVar = f.get("some section", "key1");
+string someVar = f.get("some section", "key2");
+```
+
 Capabilities
 ------------
 It supports blank lines; semicolon (`;`) and the number sign (`#`) comments; colon (`:`) as a key-value delimitier; implicit [global] section; duplicate sections are merged; implementation is case sensitive; invalid lines are simply ignored.
