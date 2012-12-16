@@ -65,4 +65,4 @@ You see? Using inifile.d is very similar to composing an actual INI file, so wri
 
 Capabilities
 ------------
-It supports blank lines, semicolon (;) and the number sign (#) comments; duplicate sections are merged; implementation is case sensitive; invalid lines are simply ignored.
+It supports blank lines; semicolon (;) and the number sign (#) comments; colon (:) as a key-value delimitier; implicit [global] section; duplicate sections are merged; implementation is case sensitive; invalid lines are simply ignored.
