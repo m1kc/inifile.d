@@ -5,4 +5,4 @@ nodocs:
 	dmd -w -wi -O test.d inifile.d -oftest
 
 clean:
-	rm -f test test.o test.ini *.html
+	rm -f test *.o test.ini *.html
