@@ -26,8 +26,13 @@
  * License: GNU/GPL v2 or higher
  * 
  * Standards:
- * Supports blank lines, semicolon (;) and the number sign (#) comments;
- * duplicate sections are merged; implementation is case sensitive;
+ * Supports
+ * blank lines;
+ * semicolon (;) and the number sign (#) comments;
+ * colon (:) as a key-value delimitier;
+ * implicit [global] section;
+ * duplicate sections are merged;
+ * implementation is case sensitive;
  * invalid lines are simply ignored.
  */
 module inifile;
@@ -38,7 +43,7 @@ import std.string;
 public class IniFile
 {
 	private string[string][string] data;
-	private string last = "Default group";
+	private string last = "global";
 
 	/// Set a group we are working with. If it doesn't exist, it will
 	/// be created when you'll add an item to it. If not set,
@@ -119,6 +124,8 @@ public class IniFile
 	{
 		foreach (string s; splitLines(input))
 		{
+			// blank line
+			if (s.length==0) continue;
 			// comment
 			if (s[0]==';') continue;
 			if (s[0]=='#') continue;
@@ -130,12 +137,24 @@ public class IniFile
 				continue;
 			}
 
-			// blank line
-			if (s.indexOf('=')==-1) continue;
-
-			// key-value pair
-			auto tmp = s.split("=");
-			setItem(tmp[0], tmp[1]);
+			if (s.indexOf('=') != -1)
+			{
+				// key=value
+				auto tmp = s.split("=");
+				setItem(tmp[0], tmp[1]);
+				continue;
+			}
+			else if (s.indexOf(':') != -1)
+			{
+				// key:value
+				auto tmp = s.split(":");
+				setItem(tmp[0], tmp[1]);
+				continue;
+			}
+			else
+			{
+				// invalid line
+			}
 		}
 	}
 }
