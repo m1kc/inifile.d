@@ -68,13 +68,14 @@ Parsing an INI is easy, too:
 ```d
 IniFile f = new IniFile();
 f.parse(someString);
+string someVar;
 // way one
 f.setGroup("some section");
-string someVar = f.get("key1");
-string someVar = f.get("key2");
+someVar = f.get("key1");
+someVar = f.get("key2");
 // way two
-string someVar = f.get("some section", "key1");
-string someVar = f.get("some section", "key2");
+someVar = f.get("some section", "key1");
+someVar = f.get("some section", "key2");
 ```
 
 Capabilities
