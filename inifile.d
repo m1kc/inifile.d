@@ -154,6 +154,7 @@ public class IniFile
 			else
 			{
 				// invalid line
+				//std.stdio.writeln("[inifile.d] Warning: cannot parse: " ~ s);
 			}
 		}
 	}

@@ -22,7 +22,7 @@ Everything is built using make. Available targets are:
 * `nodocs` &mdash; build everything except documentation.
 * `clean` &mdash; clean up the working dir.
 
-Simple typing `make` in project dir is enough if you don't need something specific.
+Simple typing `make` in project dir is enough if you don't need something specific. Run `./test` to perform self-tests.
 
 Usage
 -----

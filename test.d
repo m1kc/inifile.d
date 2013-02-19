@@ -141,6 +141,17 @@ foo:bar";
 		f.parse(ini);
 		assert(f.get("foobar", "foo")=="bar");
 	}
+
+	{
+		newTest("invalid lines"); scope(exit) writeln("ok");
+		string ini = "foo=bar
+fdjfskkfladsjfksljsadfkldfsjkl
+rar=war";
+		scope IniFile f = new IniFile();
+		f.parse(ini);
+		assert(f.get("global", "foo")=="bar");
+		assert(f.get("global", "rar")=="war");
+	}
 	return 0;
 }
 
